@@ -2,18 +2,11 @@ import array as array
 #Intcode Reader with 1 as + and 2 as * with search for verb and noun for a specified output
 
 def main():
-    for i in range(100):
-        for j in range(100):
-            a = readFile()
-            a[1] = i # noun
-            a[2] = j # verb
-            a = optcode(a)
-            if int(a[0]) == 19690720:
-                print 'optcode finish with value at 0: ', a[0], ' with noun: ', a[1], 'and verb: ', a[2]
-                break
-            else:
-                #a.clear
-                continue
+    a = readFile()
+    a[1] = 12 # noun
+    a[2] = 2 # verb
+    a = optcode(a)
+    print 'Incode programm finished with value at 0: ', a[0], ' with noun: ', a[1], 'and verb: ', a[2]
 
 def readFile():
     with open('input', 'r') as f:
